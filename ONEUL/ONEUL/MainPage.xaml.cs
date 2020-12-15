@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace ONEUL
 {
-    public partial class MainPage : ContentPage
+    public partial class MainPage : TabbedPage
     {
         private List<ListItem> listItems;
 
@@ -16,12 +16,15 @@ namespace ONEUL
         {
             InitializeComponent();
 
-            listItems = new List<ListItem>();
-            listItems.Add(new ListItem("운동", 10));
-            listItems.Add(new ListItem("강의", 23));
-            listItems.Add(new ListItem("코딩", 12));
+            listItems = new List<ListItem>
+            {
+                new ListItem("운동", 10),
+                new ListItem("강의", 23),
+                new ListItem("코딩", 12)
+            };
 
-            BindingContext = this;
+            main_list.ItemsSource = listItems;
+            main_list.BindingContext = listItems;
 
         }
     }
