@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ONEUL.WritePage">\
+    
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <Frame BackgroundColor="White" Padding="15">
+                <Label Text="작성" FontSize="23" TextColor="#E88346"/>
+            </Frame>
+            <Label Text="제목" FontSize="18"/>
+            <Editor Text="{Binding writeTitle, Mode=TwoWay}" FontSize="18"/>
+            <Label Text="메모" FontSize="18"/>
+            <Editor Text="{Binding writeMamo, Mode=TwoWay}" FontSize="18"/>
+            <Button Text="완료" Command="{Binding commandWrite}" VerticalOptions="End"/>
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>

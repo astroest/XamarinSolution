@@ -4,31 +4,47 @@
              x:Class="ONEUL.MainPage" BarBackgroundColor="#E88346" BarTextColor="White">
 
     <ContentPage Title="타임라인">
-        <StackLayout Orientation="Vertical">
-            <Frame BackgroundColor="#E88346" Padding="15">
-                <Label Text="TimeLine" FontSize="23" TextColor="White"/>
-            </Frame>
-            <ListView x:Name="main_list">
-                <ListView.ItemsSource/>
-            </ListView>
-        </StackLayout>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <ScrollView Grid.Row="0">
+                <StackLayout Orientation="Vertical">
+                    <Frame BackgroundColor="White" Padding="15">
+                        <Label Text="TimeLine" FontSize="23" TextColor="#E88346" />
+                    </Frame>
+                    <ListView x:Name="main_list" ItemsSource="{Binding diary}">
+                        <!--<ListView.ItemsSource/>-->
+                    </ListView>
+                </StackLayout>
+            </ScrollView>
+
+            <Button x:Name="btnAdd" Command="{Binding addOneul}"
+                    Grid.Row="0" Text="Add" BackgroundColor="#E88346" TextColor="White"
+                    HorizontalOptions="End" Margin="0,0,20,22" VerticalOptions="End"
+                    CornerRadius="50"/>
+
+        </Grid>
+
     </ContentPage>
 
     <ContentPage Title="통계">
         <StackLayout Orientation="Vertical">
-            <Frame BackgroundColor="#E88346" Padding="15">
-                <Label Text="Report" FontSize="23" TextColor="White"/>
+            <Frame BackgroundColor="White" Padding="15">
+                <Label Text="Report" FontSize="23" TextColor="#E88346"/>
             </Frame>
         </StackLayout>
     </ContentPage>
 
     <ContentPage Title="설정">
         <StackLayout Orientation="Vertical">
-            <Frame BackgroundColor="#E88346" Padding="15">
-                <Label Text="Setting" FontSize="23" TextColor="White"/>
+            <Frame BackgroundColor="White" Padding="15">
+                <Label Text="Setting" FontSize="23" TextColor="#E88346"/>
             </Frame>
         </StackLayout>
     </ContentPage>
-
+    
 </TabbedPage>
     
