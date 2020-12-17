@@ -22,10 +22,10 @@ namespace ONEUL
 
             listItems = new List<ListItem>
             {
-                new ListItem("운동", 10),
-                new ListItem("강의", 23),
-                new ListItem("코딩", 12),
-                new ListItem("독서", 8)
+                new ListItem("운동", "팔굽혀펴기"),
+                new ListItem("강의", "서버운영실습"),
+                new ListItem("코딩", "메인화면 수정"),
+                new ListItem("독서", "추리소설")
             };
 
             main_list.ItemsSource = this.listItems;

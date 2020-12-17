@@ -7,12 +7,12 @@ namespace ONEUL
     class ListItem
     {
         public string Title { get; set; }
-        public int Time { get; set; }
+        public string Memo { get; set; }
 
-        public ListItem(string title, int time)
+        public ListItem(string title, string memo)
         {
             this.Title = title;
-            this.Time = time;
+            this.Memo = memo;
         }
 
     }
