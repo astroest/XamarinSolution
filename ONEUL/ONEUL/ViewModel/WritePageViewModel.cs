@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
+using ONEUL.Model;
 
 using Xamarin.Forms;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace ONEUL.ViewModel
 {
@@ -12,46 +16,48 @@ namespace ONEUL.ViewModel
         private string inputTitle;
         private string inputMemo;
 
-        public Command WriteTitle { get; }
-        public Command WriteMemo { get; }
+        public String WriteTitle { get; }
+        public String WriteMemo { get; }
 
         public WritePageViewModel()
         {
-            WriteTitle = new Command(OnWriteTitle);
-            WriteMemo = new Command(OnWriteMemo);
+            Command commandWrite = new Command(CommandWrite);
         }
 
-        public string Title
+        private async void CommandWrite()
+        {
+            _ = new ListItem()
+            {
+                Title = inputTitle,
+                Memo = inputMemo
+            };
+
+            await Shell.Current.GoToAsync("..");
+        }
+
+        public string InputTitle
         {
             get => inputTitle;
             set => SetProperty(ref inputTitle, value);
         }
 
-        public string Description
+        public string InputMemo
         {
             get => inputMemo;
             set => SetProperty(ref inputMemo, value);
         }
 
-        private void SetProperty(ref string inputMemo, string value)
+        protected bool SetProperty<T>(ref T backingStore, T value,
+            [CallerMemberName] string propertyName = "",
+            Action onChanged = null)
         {
-            throw new NotImplementedException();
-        }
+            if (EqualityComparer<T>.Default.Equals(backingStore, value))
+                return false;
 
-        private void OnWriteMemo(object obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void OnWriteTitle(object obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        private bool ValidateSave()
-        {
-            return !String.IsNullOrWhiteSpace(inputTitle)
-                && !String.IsNullOrWhiteSpace(inputMemo);
+            backingStore = value;
+            onChanged?.Invoke();
+            OnPropertyChanged(propertyName);
+            return true;
         }
 
     }

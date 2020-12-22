@@ -54,6 +54,9 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient">
+      <Version>4.8.2</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
   </ItemGroup>
@@ -90,7 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ONEUL\ONEUL.csproj">
-      <Project>{BA7A6EB2-EC59-4A3E-9022-D16E7BEAE116}</Project>
+      <Project>{978c0321-11ce-4c30-b090-b2948ac2487c}</Project>
       <Name>ONEUL</Name>
     </ProjectReference>
   </ItemGroup>

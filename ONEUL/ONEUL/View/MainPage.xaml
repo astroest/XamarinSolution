@@ -16,7 +16,6 @@
                         <Label Text="TimeLine" FontSize="23" TextColor="#E88346" />
                     </Frame>
                     <ListView x:Name="main_list" ItemsSource="{Binding diary}">
-                        <!--<ListView.ItemsSource/>-->
                     </ListView>
                 </StackLayout>
             </ScrollView>

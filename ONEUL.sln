@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ONEUL.Android", "ONEUL\ONEUL.Android\ONEUL.Android.csproj", "{F9A10A88-B5C3-477F-875D-2CD535B7FD1B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AF12EA62-5BEB-4EB5-B784-DAB218C50F37} = {AF12EA62-5BEB-4EB5-B784-DAB218C50F37}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ONEUL.iOS", "ONEUL\ONEUL.iOS\ONEUL.iOS.csproj", "{AF12EA62-5BEB-4EB5-B784-DAB218C50F37}"
 EndProject

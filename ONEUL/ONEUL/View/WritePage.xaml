@@ -9,10 +9,10 @@
                 <Label Text="작성" FontSize="23" TextColor="#E88346"/>
             </Frame>
             <Label Text="제목" FontSize="18"/>
-            <Editor Text="{Binding writeTitle, Mode=TwoWay}" FontSize="18"/>
+            <Editor x:Name="writeTitle" Text="{Binding writeTitle}" FontSize="18"/>
             <Label Text="메모" FontSize="18"/>
-            <Editor Text="{Binding writeMamo, Mode=TwoWay}" FontSize="18"/>
-            <Button Text="완료" Command="{Binding commandWrite}" VerticalOptions="End"/>
+            <Editor x:Name="writeMemo" Text="{Binding writeMemo}" FontSize="18"/>
+            <Button x:Name="commandWrite" Text="완료" Command="{Binding commandWrite}" VerticalOptions="End"/>
         </StackLayout>
     </ContentPage.Content>
     

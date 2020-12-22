@@ -21,8 +21,9 @@ namespace ONEUL
                 columnStart + "CHAR(10)," +
                 columnEnd + "CHAR(10)," +
                 "PRIMARY KEY ('" + columnNo + "')";
-
-
-                
+    
     }
+
+    
+
 }
