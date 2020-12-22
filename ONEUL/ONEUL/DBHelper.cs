@@ -1,5 +1,6 @@
-﻿using System.Data;
-using System.Data.SqlClient;
+﻿using System;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 
 namespace ONEUL
 {
@@ -21,8 +22,10 @@ namespace ONEUL
                 columnStart + "CHAR(10)," +
                 columnEnd + "CHAR(10)," +
                 "PRIMARY KEY ('" + columnNo + "')";
-    
     }
+
+    //using (MySqlConnection connection = new MySqlConnection("Server=localhost; port=3306;Database= ONEUL; Uid=root; Pwd=root1111")) {
+
 
     
 
