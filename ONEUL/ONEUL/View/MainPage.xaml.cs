@@ -13,16 +13,19 @@ namespace ONEUL
     public partial class MainPage : TabbedPage
     {
         readonly MainPageViewModel viewModel;
-        private List<ListItem> listItems;
 
         public MainPage()
         {
             InitializeComponent();
-
-            BindingContext = viewModel = new MainPageViewModel();
-
-            main_list.ItemsSource = this.listItems;
-
+            //mainListView.ItemsSource = viewModel.listItems;
         }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            mainListView.ItemsSource = await App.Database.GetOneulsAsync();
+        }
+
     }
 }

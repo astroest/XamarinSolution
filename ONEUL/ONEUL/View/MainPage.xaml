@@ -9,14 +9,14 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-
             <ScrollView Grid.Row="0">
                 <StackLayout Orientation="Vertical">
                     <Frame BackgroundColor="White" Padding="15">
                         <Label Text="TimeLine" FontSize="23" TextColor="#E88346" />
                     </Frame>
-                    <ListView x:Name="main_list" ItemsSource="{Binding diary}">
-                    </ListView>
+                    <Grid>
+                        <ListView x:Name="mainListView" Margin="10"/>
+                    </Grid>
                 </StackLayout>
             </ScrollView>
 

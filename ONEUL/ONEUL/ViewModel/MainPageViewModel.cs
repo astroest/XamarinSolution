@@ -1,17 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using ONEUL.Model;
 
 using Xamarin.Forms;
+using SQLite;
 
 namespace ONEUL.ViewModel
 {
-    public class MainPageViewModel : ContentPage
+    public class MainPageViewModel : TabbedPage
     {
+        public List<ListItem> listItems { get; set; }
         public Command addOneul { get; }
         public MainPageViewModel()
         {
+
+            listItems = new List<ListItem>();
+
             addOneul = new Command(OnAddOneul);
         }
 
@@ -20,5 +24,12 @@ namespace ONEUL.ViewModel
             await Shell.Current.GoToAsync(nameof(WritePage));
             throw new NotImplementedException();
         }
+
     }
+
+    public partial class MainPage : ContentPage
+    {
+        private SQLiteAsyncConnection GetConnection;
+    }
+
 }
