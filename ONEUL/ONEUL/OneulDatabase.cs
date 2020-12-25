@@ -27,21 +27,21 @@ namespace ONEUL
                             .FirstOrDefaultAsync();
         }
 
-        public Task<int> SaveOneulAsync(ListItem note)
+        public Task<int> SaveOneulAsync(ListItem oneul)
         {
-            if (note.ID != 0)
+            if (oneul.ID != 0)
             {
-                return _database.UpdateAsync(note);
+                return _database.UpdateAsync(oneul);
             }
             else
             {
-                return _database.InsertAsync(note);
+                return _database.InsertAsync(oneul);
             }
         }
 
-        public Task<int> DeleteOneulAsync(ListItem note)
+        public Task<int> DeleteOneulAsync(ListItem oneul)
         {
-            return _database.DeleteAsync(note);
+            return _database.DeleteAsync(oneul);
         }
     }
 }

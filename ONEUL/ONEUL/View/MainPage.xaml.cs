@@ -12,12 +12,10 @@ namespace ONEUL
 {
     public partial class MainPage : TabbedPage
     {
-        readonly MainPageViewModel viewModel;
 
         public MainPage()
         {
             InitializeComponent();
-            //mainListView.ItemsSource = viewModel.listItems;
         }
 
         protected override async void OnAppearing()

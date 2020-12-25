@@ -19,9 +19,7 @@ namespace ONEUL
         public WritePage()
         {
             InitializeComponent();
-
-            BindingContext = new WritePageViewModel();
-
         }
+
     }
 }

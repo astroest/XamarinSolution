@@ -1,18 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ONEUL.ViewModel"
              x:Class="ONEUL.WritePage">\
-    
+
     <ContentPage.Content>
+
         <StackLayout Orientation="Vertical">
+
+            <StackLayout.BindingContext>
+                <local:WritePageViewModel/>
+            </StackLayout.BindingContext>
+
             <Frame BackgroundColor="White" Padding="15">
                 <Label Text="작성" FontSize="23" TextColor="#E88346"/>
             </Frame>
+            
             <Label Text="제목" FontSize="18"/>
-            <Editor x:Name="writeTitle" Text="{Binding writeTitle}" FontSize="18"/>
+            <Editor x:Name="writeTitle" 
+                    Placeholder="일상을 기록하세요"
+                    Text="{Binding writeTitle}" 
+                    FontSize="18"/>
             <Label Text="메모" FontSize="18"/>
-            <Editor x:Name="writeMemo" Text="{Binding writeMemo}" FontSize="18"/>
-            <Button x:Name="commandWrite" Text="완료" Command="{Binding commandWrite}" VerticalOptions="End"/>
+            <Editor x:Name="writeMemo" 
+                    Placeholder="메모를 입력하세요"
+                    Text="{Binding writeMemo}" 
+                    FontSize="18"/>
+            <Button x:Name="commandWrite" 
+                    Text="완료" Command="{Binding commandWrite}" 
+                    VerticalOptions="End"/>
+            
         </StackLayout>
     </ContentPage.Content>
     

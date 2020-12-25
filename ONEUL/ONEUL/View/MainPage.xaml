@@ -1,11 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:ONEUL.ViewModel"
              x:Class="ONEUL.MainPage" BarBackgroundColor="#E88346" BarTextColor="White">
 
     <ContentPage Title="타임라인">
 
         <Grid>
+            <Grid.BindingContext>
+                <local:MainPageViewModel/>
+            </Grid.BindingContext>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>

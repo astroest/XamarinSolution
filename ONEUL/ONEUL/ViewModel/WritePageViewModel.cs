@@ -9,51 +9,28 @@ namespace ONEUL.ViewModel
 {
     public class WritePageViewModel : ContentPage
     {
-        private string inputTitle;
-        private string inputMemo;
-
-        public String WriteTitle { get; }
-        public String WriteMemo { get; }
+        public string inputTtile { get; }
+        public string inputMemo { get; }
+        public DateTime inputTimre { get; }
 
         public WritePageViewModel()
         {
-            Command commandWrite = new Command(CommandWrite);
+            Command commandWrite = new Command(OnSaveOneul);
         }
 
-        private async void CommandWrite()
+        async void OnSaveOneul()
         {
-            _ = new ListItem()
-            {
-                Title = inputTitle,
-                Memo = inputMemo
-            };
-
-            await Shell.Current.GoToAsync("..");
+            var oneul = (ListItem)BindingContext;
+            oneul.Time = DateTime.UtcNow;
+            await App.Database.SaveOneulAsync(oneul);
+            await Navigation.PopAsync();
         }
 
-        public string InputTitle
+        async void OnDeleteOneul()
         {
-            get => inputTitle;
-            set => SetProperty(ref inputTitle, value);
-        }
-
-        public string InputMemo
-        {
-            get => inputMemo;
-            set => SetProperty(ref inputMemo, value);
-        }
-
-        protected bool SetProperty<T>(ref T backingStore, T value,
-            [CallerMemberName] string propertyName = "",
-            Action onChanged = null)
-        {
-            if (EqualityComparer<T>.Default.Equals(backingStore, value))
-                return false;
-
-            backingStore = value;
-            onChanged?.Invoke();
-            OnPropertyChanged(propertyName);
-            return true;
+            var oneul = (ListItem)BindingContext;
+            await App.Database.DeleteOneulAsync(oneul);
+            await Navigation.PopAsync();
         }
 
     }
