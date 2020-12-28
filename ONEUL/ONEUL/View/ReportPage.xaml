@@ -1,10 +1,21 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             xmlns:local="clr-namespace:ONEUL.ViewModel"
              x:Class="ONEUL.View.ReportPage">
+    
   <ContentView.Content>
-      <StackLayout>
-          <Label Text="Hello Xamarin.Forms!" />
-      </StackLayout>
-  </ContentView.Content>
+        <StackLayout Orientation="Vertical">
+            <StackLayout.BindingContext>
+                <local:ReportPageViewModel/>
+            </StackLayout.BindingContext>
+            
+            <Frame BackgroundColor="White" Padding="15">
+                <Label Text="Report" FontSize="23" TextColor="#E88346"/>
+            </Frame>
+            <forms:ChartView x:Name="ReportCart" HeightRequest="150"
+                             BackgroundColor="White"/>
+        </StackLayout>
+    </ContentView.Content>
+    
 </ContentView>
