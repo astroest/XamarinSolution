@@ -15,19 +15,20 @@
             <Frame BackgroundColor="White" Padding="15">
                 <Label Text="작성" FontSize="23" TextColor="#E88346"/>
             </Frame>
-            
-            <Label Text="제목" FontSize="18"/>
-            <Editor x:Name="writeTitle" 
+
+            <Label Text="제목" FontSize="18" Margin="10"/>
+            <Entry x:Name="writeTitle" 
                     Placeholder="일상을 기록하세요"
-                    Text="{Binding writeTitle}" 
-                    FontSize="18"/>
-            <Label Text="메모" FontSize="18"/>
+                    Text="{Binding WriteTitle, Mode=TwoWay}" 
+                    FontSize="18" Margin="10"/>
+            <Label Text="메모" FontSize="18" Margin="10"/>
             <Editor x:Name="writeMemo" 
                     Placeholder="메모를 입력하세요"
-                    Text="{Binding writeMemo}" 
-                    FontSize="18"/>
+                    Text="{Binding WriteMemo, Mode=TwoWay}" 
+                    FontSize="18" Margin="10"/>
             <Button x:Name="commandWrite" 
                     Text="완료" Command="{Binding commandWrite}" 
+                    BackgroundColor="#E88346" TextColor="White"
                     VerticalOptions="End"/>
             
         </StackLayout>

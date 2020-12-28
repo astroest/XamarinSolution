@@ -19,7 +19,16 @@
                         <Label Text="TimeLine" FontSize="23" TextColor="#E88346" />
                     </Frame>
                     <Grid>
-                        <ListView x:Name="mainListView" Margin="10"/>
+                        <ListView x:Name="mainListView" 
+                                  Margin="10">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <TextCell Text="{Binding Title}"
+                                              TextColor="Black"
+                                              Detail="{Binding Memo}"/>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
                     </Grid>
                 </StackLayout>
             </ScrollView>
@@ -48,6 +57,6 @@
             </Frame>
         </StackLayout>
     </ContentPage>
-    
+
 </TabbedPage>
     

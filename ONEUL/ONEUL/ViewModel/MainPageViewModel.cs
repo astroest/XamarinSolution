@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using ONEUL.Model;
 
 using Xamarin.Forms;
-using SQLite;
 
 namespace ONEUL.ViewModel
 {
-    public class MainPageViewModel : TabbedPage
+    public class MainPageViewModel
     {
         public List<ListItem> listItems { get; set; }
         public Command addOneul { get; }
@@ -25,11 +24,6 @@ namespace ONEUL.ViewModel
             throw new NotImplementedException();
         }
 
-    }
-
-    public partial class MainPage : ContentPage
-    {
-        private SQLiteAsyncConnection GetConnection;
     }
 
 }
